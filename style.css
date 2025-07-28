@@ -1,0 +1,637 @@
+ html, body {
+  overflow-x: hidden;
+}
+
+ body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #09264b;
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: #051f3f; /* Warna navbar utama */
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    overflow: visible; /* penting untuk dropdown keluar */
+  }
+
+  /* Menu kiri dan kanan */
+  .nav-left,
+  .nav-right {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Item */
+  .nav-left li,
+  .nav-right li {
+    position: relative;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* Hover effect menu kiri */
+  .nav-left li:hover {
+    background-color: #40e00b;
+  }
+
+  .nav-left li:hover > a {
+    color: #000;
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #e86819;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 1000;
+  }
+
+  .dropdown-menu li a {
+    padding: 12px 16px;
+    color: white;
+  }
+
+  /* Show dropdown on hover */
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+
+  /* Submenu dropdown */
+  .dropdown-sub {
+    position: relative;
+  }
+
+  .dropdown-sub:hover > .dropdown-menu {
+    display: block;
+    top: 0;
+    left: 100%;
+  }
+
+  /* Social icons */
+  .nav-right .social-icon a {
+    font-size: 18px;
+    padding: 14px 16px;
+    color: white;
+  }
+
+  .social-icon a.facebook {
+    background-color: #1877f2;
+  }
+
+  .social-icon a.whatsapp {
+    background-color: #25d366;
+  }
+
+  .social-icon a:hover {
+    opacity: 0.8;
+  }
+
+/* Container penuh lebar skrin */
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* hitam supaya gambar nampak jelas jika tak cukup lebar */
+  overflow: visible;
+}
+
+.banner img {
+  width: 100%;
+  height: 500px;
+  max-width: 100%;
+  object-fit: fill; /* pastikan tak crop */
+  display: block;
+}
+
+.news-ticker {
+  position: relative;
+  background: linear-gradient(90deg, #09680e, #538ee7);;
+  color: rgb(243, 237, 237);
+  overflow: visible;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 10px 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.news-ticker p {
+  display: inline-block;
+  padding-left: 100%; /* start off-screen to right */
+  animation: ticker-scroll 20s linear infinite;
+  margin: 0;
+}
+
+.news-ticker span {
+  margin: 0 40px;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+  /* Square container */
+    .square-box {
+      width: 100vw;
+      height: 10vh;
+      background-color: #09680e;
+      border: 2px solid #0d0d0d;
+      border-radius: 0px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Horizontal row inside square */
+    .button-row {
+      display: flex;
+      gap: 100px;
+    }
+
+    /* Flip button style */
+    .flip-button {
+      width: 150px;
+      height: 50px;
+      perspective: 1000px;
+      box-shadow: 0 0 2px 2px #c1e609, 0 0 5px 5px #f17c07;
+    }
+
+    .flip-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-button:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-front,
+    .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .flip-front {
+      background-color: #13120f;
+      color: rgb(227, 250, 55);
+    }
+
+   .flip-back {
+  background-color: rgb(253, 253, 248);
+  color: #1a1a1a;
+  border: 2px solid #181b18;
+  transform: rotateY(180deg) scaleX(-1); /* Flip horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Container bawah button: susun secara horizontal */
+/* Container bawah button: certificate kiri + slider kanan */
+.bottom-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 50px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto 40px auto;
+  flex-wrap: wrap;
+}
+
+/* Certificate di kiri */
+.certificate {
+  flex: none;
+  width: 300px;       /* boleh ubah ikut keperluan */
+  height: 500px;      /* samakan dengan slider */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Slider di kanan */
+.slider {
+  flex: 1;
+  min-width: 600px;
+  height: 500px;        /* sama tinggi dengan certificate */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #151414;
+}
+
+/* Barisan slide */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slide item */
+.slide {
+  min-width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+/* Gambar dalam slide */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;  /* penuh tanpa distorsi */
+  display: block;
+  border-radius: 8px;
+}
+
+/* Butang navigasi */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.nav-btn {
+  background-color: rgba(17, 16, 15, 0.5);
+  border: none;
+  color: rgb(247, 246, 251);
+  font-size: 18px;
+  padding: 8px 12px;
+  cursor: pointer;
+  pointer-events: all;
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: rgba(252, 248, 7, 0.8);
+}
+
+.right-buttons {
+  position: fixed;
+  top: 150px;    /* move down */
+  right: 0;  /* move right */
+  display: flex;
+  flex-direction: column;  /* vertical stack */
+  gap: 60px;               /* space between buttons */
+  z-index: 9999;
+  transform: translateX(20%);
+}
+
+/* Style for all buttons */
+.btn-pweb {
+  background-color: #100f07;
+  color: rgb(246, 223, 15);
+  padding: 20px 20px;
+  border-radius: 0px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 15px;
+  text-align: center;
+  width: 120px;             /* fixed width for uniformity */
+  display: inline-block;
+  transition: transform 0.3s ease;
+  border: 3px solid black;  /* <-- add this line */
+
+   /* constant glow */
+  box-shadow: 0 0 8px 4px #c1e609, 0 0 15px 6px #f17c07;
+}
+
+/* Rotate each button with different angles */
+.right-buttons button:nth-child(1) {
+  transform: rotate(90deg);
+}
+
+.right-buttons button:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.right-buttons button:nth-child(3) {
+  transform: rotate(90deg);
+}
+
+/* Glow on hover */
+.right-buttons button:hover {
+  box-shadow: 0 0 8px 4px #101010, 0 0 15px 6px #141414;
+  background-color: #f5f4f0;
+  color: black;
+}
+
+/* Khusus untuk butang kanan (admin menu) */
+.admin-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.admin-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 100%; /* keluar ke kiri */
+  background-color: #e86819;
+  min-width: 180px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  z-index: 1000;
+  padding: 5px 0;
+  margin: 0;
+  transform: translateX(-166px) translateY(-16px);
+}
+
+.admin-dropdown .dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.admin-dropdown .dropdown-menu a:hover {
+  background-color: #26cf0c;
+}
+
+.admin-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.main-footer {
+  background-color: #051f3f;
+  color: #fff;
+  padding: 20px 10px 5px 10px;
+  font-size: 13px;
+  text-align: left; /* pastikan semua teks align ke kiri */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: flex-start; /* align semua ke kiri */
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-section h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #f0f0f0;
+  text-align: left;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+  color: #f8ec0e;
+}
+
+.footer-bottom {
+  text-align: center; /* align kiri juga di bawah */
+  margin-top: 15px;
+  padding-top: 8px;
+  border-top: 1px solid #444;
+  font-size: 12px;
+  color: #f5eeee;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgb(192, 14, 180); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #3cd60e; /* Add a dark-grey background on hover */
+}
+
+ /* Floating avatar button */
+    #chat-toggle {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      /* ✅ Glowing effect */
+  box-shadow: 0 0 12px rgba(56, 189, 11, 0.8), 
+              0 0 20px rgba(230, 156, 9, 0.6),
+              0 0 25px rgba(66, 9, 172, 0.5);
+  animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 8px rgba(17, 4, 159, 0.7),
+                0 0 15px rgba(24, 10, 86, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(30, 9, 149, 0.9),
+                0 0 30px rgba(0, 191, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(16, 29, 3, 0.7),
+                0 0 15px rgba(235, 232, 231, 0.5);
+  }
+}
+
+    #chat-toggle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Chat container */
+    #chat-container {
+      position: fixed;
+      left: 90px;
+      bottom: 20px;
+      width: 300px;
+      max-height: 400px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+      display: none;
+    }
+
+    #chat-box {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .input-row {
+      display: flex;
+      padding: 10px;
+      gap: 6px;
+      border-top: 1px solid #ccc;
+      background: #fafafa;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    #send-btn {
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #close-chat {
+      background: transparent;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #999;
+      align-self: flex-end;
+    }
+
+    .message {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .user-message {
+      flex-direction: row-reverse;
+    }
+    .avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 8px;
+      flex-shrink: 0;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .bubble {
+      max-width: 70%;
+      padding: 10px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+    .user-message .bubble {
+      background-color: #4a90e2;
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+    .bot-message .bubble {
+      background-color: #eee;
+      color: #333;
+      border-bottom-left-radius: 4px;
+    }
