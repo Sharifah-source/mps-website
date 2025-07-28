@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
       reply: "MPS bertanggungjawab dalam pembangunan bandar, pengurusan sisa, lesen perniagaan, kebersihan, dan perancangan kawasan."
     },
     {
-      keywords: ["di", "mana", "wisma", "warisan"],
+      keywords: ["di", "mana", "wisma", "lokasi", "warisan"],
       reply: "Wisma Warisan terletak di Pusat Bandar Sandakan, berhampiran pejabat utama MPS."
     },
     {
-      keywords: ["di", "mana", "wisma", "sandaraya"],
+      keywords: ["di", "mana", "wisma", "lokasi","sandaraya"],
       reply: "Wisma Sandaraya juga terletak di Pusat Bandar Sandakan, Sabah."
     },
     {
@@ -133,15 +133,15 @@ document.addEventListener("DOMContentLoaded", () => {
       reply: "Permohonan lesen anjing boleh dibuat di kaunter bawah Wisma Warisan atau secara dalam talian sekiranya disediakan."
     },
     {
-      keywords: ["di", "mana", "mps"],
+      keywords: ["di", "mana", "lokasi","mps"],
       reply: "Ibu pejabat Majlis Perbandaran Sandakan (MPS) terletak di Pusat Bandar Sandakan, Sabah."
     },
     {
-      keywords: ["dimana", "pejabat", "mps"],
+      keywords: ["dimana", "pejabat", "lokasi", "mps"],
       reply: "Ibu pejabat Majlis Perbandaran Sandakan (MPS) terletak di Pusat Bandar Sandakan, Sabah."
     },
     {
-      keywords: ["di", "mana", "ofis", "mps"],
+      keywords: ["di", "mana", "ofis", "lokasi", "mps"],
       reply: "Ibu pejabat Majlis Perbandaran Sandakan (MPS) terletak di Pusat Bandar Sandakan, Sabah."
     },
     {
@@ -159,7 +159,24 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       keywords: ["siapa", "bertanggungjawab", "cukai", "pintu"],
       reply: "Cukai pintu adalah tanggungjawab pemilik atau penghuni harta berkadar. Ia boleh dituntut daripada penyewa/penghuni berdasarkan Seksyen 82 & 92 Ordinan Kerajaan Tempatan 1961."
+    },
+    {
+      keywords: ["bila", "buka", "kaunter", "bayaran"],
+      reply: "Kaunter bayaran dibuka Isnin hingga Khamis dari jam 8.00 pagi hingga 3.00 petang. Jumaat dari 8.00 pagi hingga 11.30 pagi, kemudian 1.30 petang hingga 3.00 petang. Sabtu, Ahad dan cuti umum ditutup. Kaunter bayaran di tingkat bawah Wisma Warisan."
+    },
+    {
+      keywords: ["waktu", "operasi", "kaunter", "bayaran"],
+      reply: "Kaunter bayaran dibuka Isnin hingga Khamis dari jam 8.00 pagi hingga 3.00 petang. Jumaat dari 8.00 pagi hingga 11.30 pagi, kemudian 1.30 petang hingga 3.00 petang. Sabtu, Ahad dan cuti umum ditutup. Kaunter bayaran di tingkat bawah Wisma Warisan."
+    },
+    {
+      keywords: ["lokasi", "kaunter", "bayaran"],
+      reply: "Kaunter bayaran di tingkat bawah Wisma Warisan. Waktu operasi: Isnin – Khamis (8.00 pagi – 3.00 petang), Jumaat (8.00 – 11.30 pagi, 1.30 – 3.00 petang). Sabtu, Ahad dan cuti umum ditutup."
+    },
+    {
+      keywords: ["di", "mana", "kaunter", "bayaran"],
+      reply: "Kaunter bayaran terletak di tingkat bawah Wisma Warisan, Sandakan. Waktu operasi adalah Isnin hingga Khamis dari 8.00 pagi hingga 3.00 petang, dan Jumaat dari 8.00 pagi hingga 11.30 pagi, kemudian 1.30 petang hingga 3.00 petang."
     }
+
  ];
 
   const chatToggle = document.getElementById("chat-toggle");
