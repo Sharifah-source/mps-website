@@ -1,4 +1,5 @@
 const slides = document.querySelector('.slides');
+if (slides) {
 const slideCount = document.querySelectorAll('.slide').length;
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
@@ -35,6 +36,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 startAutoSlide();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const responses = [
@@ -141,8 +143,24 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       keywords: ["di", "mana", "ofis", "mps"],
       reply: "Ibu pejabat Majlis Perbandaran Sandakan (MPS) terletak di Pusat Bandar Sandakan, Sabah."
+    },
+    {
+      keywords: ["apa", "itu", "harta", "berkadar"],
+      reply: "Harta berkadar ialah mana-mana pegangan hartanah yang mempunyai atau tidak mempunyai bangunan atau struktur kekal, dan terletak di kawasan pentadbiran Majlis, seperti yang dinyatakan dalam Seksyen 72 Ordinan Kerajaan Tempatan 1961 (Pindaan 2000)."
+    },
+    {
+      keywords: ["apakah", "harta", "dikecualikan", "cukai", "pintu"],
+      reply: "Harta yang dikecualikan cukai pintu termasuk:\n• Tempat ibadah (masjid, gereja, kuil, dsb.)\n• Tanah perkuburan awam\n• Sekolah tidak berasaskan keuntungan\n• Hospital & klinik awam\n• Tempat sukan/riadah tanpa keuntungan\n• Harta Majlis\n• Harta bernilai tahunan di bawah RM150\n• Harta yang diluluskan oleh Yang Di-Pertua Negeri Sabah dan diwartakan."
+    },
+    {
+      keywords: ["apa", "itu", "cukai", "pintu"],
+      reply: "Cukai pintu ialah cukai yang dikenakan ke atas setiap harta berkadar dalam kawasan pentadbiran Majlis. Ia digunakan untuk menampung kos pentadbiran serta penyediaan dan penyelenggaraan perkhidmatan kepada pembayar cukai."
+    },
+    {
+      keywords: ["siapa", "bertanggungjawab", "cukai", "pintu"],
+      reply: "Cukai pintu adalah tanggungjawab pemilik atau penghuni harta berkadar. Ia boleh dituntut daripada penyewa/penghuni berdasarkan Seksyen 82 & 92 Ordinan Kerajaan Tempatan 1961."
     }
-  ];
+ ];
 
   const chatToggle = document.getElementById("chat-toggle");
   const closeBtn = document.getElementById("close-chat");
